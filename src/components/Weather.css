@@ -1,0 +1,247 @@
+/* Container for the weather widget */
+.weather {
+    place-self: center;
+    padding: 20px;
+    border-radius: 10px;
+    background: transparent;
+    box-shadow: 0 0 20px rgba(0,0,0,10), /* Soft outer shadow */
+                0 0 30px rgba(0,0,0,60); /* Stronger inner shadow */
+    backdrop-filter: blur(2px); /* Blurring the background */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Styles for the search bar container */
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+/* Styles for the search input field */
+.search-bar input {
+    height: 50px;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    padding-left: 25px;
+    color: #ebfffc; /* Text color */
+    background-color: #191a1a36; /* Semi-transparent background */
+    box-shadow: 0 0 12px rgba(0,0,0,10), /* Outer shadow */
+                 0 0 15px rgba(0,0,0,10); /* Inner shadow */
+    font-size: 18px;
+    width: 100%;
+    max-width: 300px;
+}
+
+/* Styles for the search icon */
+.search-bar img {
+    width: 50px;
+    padding: 15px;
+    border-radius: 50%;
+    background-color: #191a1a36; /* Semi-transparent background */
+    box-shadow: 0 0 12px rgba(0,0,0,10), /* Outer shadow */
+                 0 0 12px rgba(0,0,0,10); /* Inner shadow */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+/* Container for the forecast days */
+.forecast {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Styles for each forecast day box */
+.forecast-day {
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    width: 180px;
+    box-shadow: 0 0 10px rgba(0,0,0,12), /* Outer shadow */
+                0 0 12px rgba(0,0,0,10); /* Inner shadow */
+    flex: 0 0 auto; /* Prevents shrinking */
+}
+
+/* Styles for the weather icon */
+.weather-icon {
+    width: 100px;
+    margin-bottom: 10px;
+}
+
+/* Styles for the temperature text */
+.temperature {
+    color: #ffff; /* White color */
+    font-size: 40px;
+    line-height: 1;
+    margin: 10px 0;
+}
+
+/* Styles for the date text */
+.date {
+    color: #ffff; /* White color */
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* Container for additional weather data */
+.weather-data {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+/* Styles for each data row in weather data */
+.weather-data .col {
+    color: #ffff; /* White color */
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+}
+
+/* Styles for the icons in weather data */
+.weather-data .col img {
+    width: 24px;
+}
+
+/* Styles for the additional text in weather data */
+.weather-data .col span {
+    font-size: 14px;
+    color: #ddd; /* Light grey color */
+}
+
+/* Styles for the scrollbar */
+::-webkit-scrollbar {
+    width: 3px;
+    border: 1px solid transparent;
+    background: url(/src/assets/bg-img.jpg); /* Background image for scrollbar */
+    background-size: cover;
+}
+
+/* Styles for the scrollbar track */
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: transparent;
+}
+
+/* Styles for the scrollbar thumb */
+::-webkit-scrollbar-thumb {
+    border-radius: 0;
+    background: rgba(32, 31, 37, 0.932); /* Dark color for the thumb */
+}
+
+/* Media query for devices with a max-width of 768px */
+@media (max-width: 768px) {
+    .weather {
+        padding: 15px;
+        border-radius: 0;
+    }
+
+    .search-bar {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .search-bar input {
+        width: 100%;
+        max-width: none;
+        margin-right: 10px;
+    }
+
+    .forecast {
+        gap: 10px;
+        flex-wrap: wrap;
+        overflow-x: auto;
+    }
+
+    .forecast-day {
+        width: 150px;
+        padding: 10px;
+    }
+
+    .weather-icon {
+        width: 80px;
+    }
+
+    .temperature {
+        font-size: 30px;
+    }
+
+    .date {
+        font-size: 16px;
+    }
+
+    .weather-data .col {
+        font-size: 14px;
+    }
+
+    .weather-data .col img {
+        width: 20px;
+    }
+}
+
+/* Media query for devices with a max-width of 480px */
+@media (max-width: 480px) {
+    .weather {
+        padding: 10px;
+        border-radius: 0;
+    }
+
+    .search-bar {
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .search-bar input {
+        font-size: 16px;
+        flex: 1;
+        margin-right: 10px;
+    }
+
+    .search-bar img {
+        width: 40px;
+        padding: 10px;
+        flex-shrink: 0;
+    }
+
+    .forecast {
+        gap: 5px;
+        overflow-x: auto;
+    }
+
+    .forecast-day {
+        width: 100%;
+        padding: 5px;
+    }
+
+    .weather-icon {
+        width: 60px;
+    }
+
+    .temperature {
+        font-size: 24px;
+    }
+
+    .date {
+        font-size: 14px;
+    }
+
+    .weather-data .col {
+        font-size: 12px;
+    }
+
+    .weather-data .col img {
+        width: 16px;
+    }
+}
